@@ -21,18 +21,22 @@ function App() {
   }
 
   function handleEditAvatarClick() {
+    setSelectedCard({});
     setIsEditAvatarPopupOpen(true);
   }
 
   function handleEditProfileClick() {
+    setSelectedCard({});
     setIsEditProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
+    setSelectedCard({});
     setIsAddPlacePopupOpen(true);
   }
 
-  function handleZoomClick() {
+  function handleZoomClick(card) {
+    setSelectedCard(card);
     setIsZoomImagePopupOpen(true);
   }
 

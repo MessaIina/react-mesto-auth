@@ -49,12 +49,15 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, selectedCard, onZoom}) {
       </section>
       <section className="cards">
         <ul className="cards__list">
-          {cards.map((card, index)=>{
-            return (
-              <Card key={index} likes={card.likes} link={card.link} name={card.name} selectedCard={selectedCard} onZoom={onZoom}/>
-            ) 
-          })}
-        </ul>
+          {cards.map((card) => (
+            <Card
+              key={card._id} 
+              card={card} 
+              selectedCard={selectedCard}
+              onZoom={onZoom}
+            />
+          ))}
+       </ul>
       </section>
     </main>
 
