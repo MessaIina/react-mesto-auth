@@ -10,34 +10,32 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
-  const [isZoomImagePopupOpen, setIsZoomImagePopupOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
 
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setIsZoomImagePopupOpen(false);
+    setSelectedCard(null);
   }
 
   function handleEditAvatarClick() {
-    setSelectedCard({});
+    setSelectedCard(null);
     setIsEditAvatarPopupOpen(true);
   }
 
   function handleEditProfileClick() {
-    setSelectedCard({});
+    setSelectedCard(null);
     setIsEditProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
-    setSelectedCard({});
+    setSelectedCard(null);
     setIsAddPlacePopupOpen(true);
   }
 
   function handleZoomClick(card) {
     setSelectedCard(card);
-    setIsZoomImagePopupOpen(true);
   }
 
   return (
@@ -51,12 +49,14 @@ function App() {
         onZoom={handleZoomClick}
       />
       <Footer />
-      <ImagePopup
-        src={selectedCard.link}
-        alt={selectedCard.name}
-        isOpen={isZoomImagePopupOpen}
-        onClose={closeAllPopups}
-      />
+      {selectedCard && (
+        <ImagePopup
+          src={selectedCard.link}
+          alt={selectedCard.name}
+          isOpen={!!selectedCard}
+          onClose={() => setSelectedCard(null)}
+        />
+      )}
       <PopupWithForm
         name={"profile"}
         title={"Редактировать профиль"}
