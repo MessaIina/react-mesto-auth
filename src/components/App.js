@@ -16,21 +16,17 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setSelectedCard(null);
   }
 
   function handleEditAvatarClick() {
-    setSelectedCard(null);
     setIsEditAvatarPopupOpen(true);
   }
 
   function handleEditProfileClick() {
-    setSelectedCard(null);
     setIsEditProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
-    setSelectedCard(null);
     setIsAddPlacePopupOpen(true);
   }
 
