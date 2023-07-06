@@ -34,8 +34,8 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, selectedCard, onZoom}) {
     <main className="content container">
       <section className="profile">
         <div className="profile__avatar-container">
-          <button className="profile__avatar" onClick={onEditAvatar}>
-            <img className="profile__avatar-edit-btn" src={userAvatar} alt="Аватар профиля"/>
+          <img className="profile__avatar" src={userAvatar} alt="Аватар профиля"/>
+          <button type="button" className="profile__avatar-edit-btn" onClick={onEditAvatar}>
           </button>
         </div>
         <div className="profile__info">
