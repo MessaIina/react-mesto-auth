@@ -175,6 +175,7 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setIsDeletePopupOpen(false);
     setIsInfoToolTipOpen(false);
+    setIsZoomImagePopupOpen(false);
   };
 
   function handleEditAvatarClick() {
@@ -190,7 +191,7 @@ function App() {
   }
 
   function handleCardClick(card) {
-    setSelectedCard({ name: card.name, link: card.link });
+    setIsZoomImagePopupOpen(true);
   }
 
   function handleDeleteClick() {
