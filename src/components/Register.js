@@ -49,17 +49,13 @@ export function Register({ onRegister }) {
           value={password || ""}
           onChange={handlePasswordChange}
         />
-        <button
-          onSubmit={handleSubmit}
-          type="submit"
-          className="register__submit-button"
-        >
+        <button type="submit" className="register__submit-button">
           Зарегистрироваться
         </button>
-        <Link to="/sign-in" className="register__span">
-          Уже зарегистрированы? Войти
-        </Link>
       </form>
+      <Link to="/sign-in" className="register__span">
+        Уже зарегистрированы? Войти
+      </Link>
     </section>
   );
 }

@@ -23,7 +23,7 @@ function App() {
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
   const [isZoomImagePopupOpen, setIsZoomImagePopupOpen] = useState(false);
   const [isDeletePopupOpen, setIsDeletePopupOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
+  const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -137,30 +137,32 @@ function App() {
       });
   }
 
-  function handleLogin(password, email) {
-    return Auth.login(password, email)
-      .then((data) => {
-        if (data.token) {
-          navigate("/", { replace: true });
-          setLoggedIn(true);
-          setUserEmail(email);
-        }
-      })
-      .catch((err) => console.log(err));
-  }
+  function handleLogin(password, email) { 
+    return Auth.login(password, email) 
+      .then((data) => { 
+        if (data.token) { 
+          navigate("/", { replace: true }); 
+          setLoggedIn(true); 
+          setUserEmail(email); 
+        } 
+      }) 
+      .catch((err) => console.log(err)); 
+  } 
 
-  function checkToken() {
-    const jwt = localStorage.getItem("token");
-    if (jwt) {
-      Auth.checkToken(jwt).then((res) => {
-        if (res) {
-          const userEmail = res.data.email;
-          setUserEmail(userEmail);
-          setLoggedIn(true);
-          navigate("/", { replace: true });
-        }
-      });
-    }
+  function checkToken() { 
+    const jwt = localStorage.getItem("token"); 
+    if (jwt) { 
+      Auth.checkToken(jwt)
+        .then((res) => { 
+          if (res) { 
+            const userEmail = res.data.email; 
+            setUserEmail(userEmail); 
+            setLoggedIn(true); 
+            navigate("/", { replace: true }); 
+          } 
+        })
+        .catch((err) => console.log(err)); 
+    } 
   }
 
   function signOut() {
@@ -190,7 +192,7 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
-  function handleCardClick(card) {
+  function handleZoomClick() {
     setIsZoomImagePopupOpen(true);
   }
 
@@ -227,7 +229,7 @@ function App() {
                 onAddPlace={handleAddPlaceClick}
                 onEditAvatar={handleEditAvatarClick}
                 selectedCard={setSelectedCard}
-                onZoom={handleCardClick}
+                onZoom={handleZoomClick}
                 onDelete={handleDeleteClick}
                 cards={cards}
                 onCardLike={handleCardLike}

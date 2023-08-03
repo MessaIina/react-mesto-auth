@@ -25,12 +25,7 @@ export function Login({ onLogin }) {
   return (
     <section className="login" aria-label="Вход в профиль">
       <h2 className="login__heading">Вход</h2>
-      <form
-        onSubmit={handleSubmit}
-        className="login__form"
-        name="login-form"
-        noValidate
-      >
+      <form onSubmit={handleSubmit} className="login__form" name="login-form" noValidate>
         <input
           value={email || ""}
           onChange={handleEmailChange}
@@ -53,11 +48,7 @@ export function Login({ onLogin }) {
           minLength="2"
           maxLength="200"
         />
-        <button
-          onSubmit={handleSubmit}
-          type="submit"
-          className="login__submit-button"
-        >
+        <button type="submit" className="login__submit-button">
           Войти
         </button>
       </form>
