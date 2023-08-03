@@ -14,15 +14,15 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     }).then(this._handleResponse);
   }
   getUserAvatar() {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     }).then(this._handleResponse);
   }
@@ -30,8 +30,8 @@ class Api {
     return fetch(`${this._baseUrl}/cards`, {
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     }).then(this._handleResponse);
   }
   setUserAvatar(data) {
@@ -39,7 +39,7 @@ class Api {
       method: "PATCH",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         avatar: data.avatar,
@@ -51,7 +51,7 @@ class Api {
       method: "PATCH",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: data.name,
@@ -64,7 +64,7 @@ class Api {
       method: "POST",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     }).then(this._handleResponse);
@@ -74,7 +74,7 @@ class Api {
       method: "DELETE",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     }).then(this._handleResponse);
   }
@@ -83,7 +83,7 @@ class Api {
       method: "PUT",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     }).then(this._handleResponse);
   }
@@ -92,7 +92,7 @@ class Api {
       method: "DELETE",
       headers: {
         authorization: this._authorization,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     }).then(this._handleResponse);
   }
