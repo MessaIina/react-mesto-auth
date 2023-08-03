@@ -1,9 +1,12 @@
-.header {
-    border-bottom: 1px solid rgb(84 84 84 / 70%);
+.header{
     max-width: 880px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+    padding-top: 45px;
+    border-bottom: 1px solid rgb(84, 84, 84, .7);
     width: 100%;
-}
+    display: flex;
+    justify-content: space-between;
+  }
 
 @media (max-width: 930px) {
     .header {
