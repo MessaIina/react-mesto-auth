@@ -9,3 +9,8 @@
   padding: 5px;
   gap: 18px;
 }
+@media all and (max-width: 570px) {
+  .header__container {
+    display: block;
+  }
+}
